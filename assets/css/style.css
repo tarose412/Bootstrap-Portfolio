@@ -1,0 +1,288 @@
+/* General */
+
+/* h1 = main section headings
+   h2 = sidebar heading
+   h3 = Portfolio image captions */
+
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 34px;
+  color: #777;
+  background: url(../imgs/background.png);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #4AAAA5;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #4AAAA5;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-bottom: 20px;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-weight: 700;
+  color: #4aaaa5;
+}
+
+h1 {
+  padding-bottom: 20px;
+  font-size: 30px;
+  line-height: 49px;
+  border-bottom: 3px solid #ddd;
+}
+
+h2,
+h3 {
+  font-size: 22px;
+}
+
+/* Navbar */
+
+.navbar {
+  border-bottom: 2px solid #CCC;
+  margin-bottom: 30px;
+  overflow: auto;
+  padding: 0;
+}
+
+.nav-brand {
+  background-color: #4AAAA5;
+  color: #FFF;
+  text-decoration: none;
+  width: 250px;
+  height: 90px;
+  line-height: 90px;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.nav-brand:hover {
+  text-decoration: none;
+  color: #EEE;
+}
+
+.navbar-nav > .nav-item {
+  padding-left: 15px;
+  margin-left: 15px;
+  border-left: 1px solid #EFEFEF;
+  line-height: 18px;
+}
+
+.navbar-nav > .nav-item:first-child {
+  border-left: 0;
+}
+
+.navbar-toggler {
+  margin-right: 10px;
+}
+
+/* nav-link hover effects */
+.nav-link {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #FFF;
+}
+
+.nav-link,
+.nav-link::after,
+.nav-link::before {
+  transition: all .5s;
+}
+
+.nav-link::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  height: 1px;
+  content: '.';
+  color: transparent;
+  background: #4AAAA5;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+
+}
+.nav-link:hover::after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+
+/* Remove nav-item border-left when collapsed */
+/* Remove custom hover effect when collapsed */
+@media only screen and (max-width : 768px) {
+  .navbar-nav > .nav-item {
+    border-left: 0;
+  }
+
+  .navbar-light .navbar-nav .nav-link:focus,
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: rgba(0,0,0,.7);
+  }
+
+  .nav-link:hover::after {
+    opacity: 0;
+    visibility: transparent;
+  }
+}
+
+/* Give main/sidebar container top margin to account for fixed navbar */
+.main_sidebar_wrapper {
+  margin-top: 120px;
+}
+
+/* Main */
+.main {
+  background: #FFF;
+  border: 1px solid #DDD;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.profile_photo {
+  float: left;
+  width: 40%;
+  margin-top: 10px;
+  margin-right: 25px;
+}
+
+/* Sidebar */
+
+.sidebar {
+  padding: 30px;
+  margin-bottom: 30px;
+  background: #FFF;
+  border: 1px solid #DDD;
+}
+
+.sidebar h2 {
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+  line-height: 22px;
+  border-bottom: 2px solid #eee;
+}
+
+.social_div {
+  text-align: center;
+  padding: 5px;
+}
+
+.social_icon {
+  height: 62px;
+  width: 62px;
+}
+
+/* Icon hover effect */
+.social_icon:hover {
+  box-shadow: 3px 3px lightgray;
+  cursor: pointer;
+}
+
+/* Icon click effect */
+.social_icon:active {
+  position: relative;
+  top: 2px;
+  box-shadow: none;
+}
+
+/* Footer */
+.footer {
+  padding: 30px 0;
+  clear: both;
+  font-size: 12px;
+  color: #CCC;
+  text-align: center;
+  background: #666;
+  border-top: 8px solid #4aaaa5;
+  width: 100%;
+}
+
+/* Button Style */
+.btn_submit {
+  height: 40px;
+  width: 120px;
+  background-color: #4AAAA5;
+  color: #FFF;
+  font-size: 14px;
+  border: none;
+  text-align: center;
+  outline: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Button hover effect */
+.btn_submit:hover {
+  border: 2px solid #4AAAA5;
+  color: #4AAAA5;
+  font-weight: bold;
+  background-color: #FFF;
+  transition: .3s;
+  cursor: pointer;
+}
+
+/* Button click effect */
+.btn_submit:active {
+  box-shadow: none;
+  position: relative;
+  top: 2px;
+  outline: none;
+}
+
+/* Portfolio Items */
+
+.portfolio_item {
+  position: relative;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.portfolio_img {
+  width: 100%;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.portfolio_label {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  padding: 10px;
+  font-weight: 300;
+  color: #FFF;
+  background: #4AAAA5;
+  border-bottom: 0;
+  margin-bottom: 0;
+  width: 100%;
+}
